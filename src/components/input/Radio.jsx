@@ -1,6 +1,6 @@
-import React from "react"
-import PropTypes from "prop-types"
-import "../styles.scss"
+import React from "react";
+import PropTypes from "prop-types";
+import "../styles.scss";
 
 export const RadioInput = (props) => {
 	const { onChangeAdd, onChangeRemove, name, text, anotherText, id, isActive } =
@@ -34,4 +34,9 @@ export const RadioInput = (props) => {
 RadioInput.propTypes = {
 	text: PropTypes.string,
 	onchangeAdd: PropTypes.func,
+	onChangeRemove: PropTypes.func,
+	name: PropTypes.string,
+	anotherText: PropTypes.string,
+	id: PropTypes.string,
+	isActive: PropTypes.bool,
 }

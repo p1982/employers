@@ -1,4 +1,5 @@
-import React from "react"
+import React from "react";
+import PropTypes from "prop-types";
 
 export const NoBirthday = (props) => {
 	const { text } = props
@@ -7,4 +8,8 @@ export const NoBirthday = (props) => {
 			<p>{text}</p>
 		</div>
 	)
+}
+
+NoBirthday.propTypes = {
+	text: PropTypes.string,
 }

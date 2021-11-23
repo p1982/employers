@@ -1,8 +1,8 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { Employer } from "../employer/employer"
-import { EmployerNone } from "../employer/EmployerNone"
-import "../styles.scss"
+import React from "react";
+import PropTypes from "prop-types";
+import { Employer } from "../employer/employer";
+import { EmployerNone } from "../employer/EmployerNone";
+import "../styles.scss";
 
 export const Employers = (props) => {
 	const { employers, letter } = props
@@ -23,5 +23,6 @@ export const Employers = (props) => {
 }
 
 Employers.propTypes = {
-	text: PropTypes.string,
+	leter: PropTypes.string,
+	employers: PropTypes.array,
 }

@@ -1,4 +1,5 @@
-import React from "react"
+import React from "react";
+import PropTypes from "prop-types";
 
 export const Birthday = (props) => {
 	const { employer, month } = props
@@ -12,4 +13,9 @@ export const Birthday = (props) => {
 			</p>
 		</div>
 	)
+}
+
+Birthday.propTypes = {
+	month: PropTypes.string,
+	employer: PropTypes.object,
 }

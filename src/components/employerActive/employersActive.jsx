@@ -1,6 +1,7 @@
-import React from "react"
-import { Birthday } from "../birthday/Birthday"
-import { NoBirthday } from "../birthday/NoBirthday"
+import React from "react";
+import PropTypes from "prop-types";
+import { Birthday } from "../birthday/Birthday";
+import { NoBirthday } from "../birthday/NoBirthday";
 
 export const EmployersActive = (props) => {
 	const { month, employersActiveList } = props
@@ -16,4 +17,9 @@ export const EmployersActive = (props) => {
 			)}
 		</div>
 	)
+}
+
+Birthday.propTypes = {
+	month: PropTypes.string,
+	employersActiveList: PropTypes.array,
 }

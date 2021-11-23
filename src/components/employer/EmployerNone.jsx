@@ -1,6 +1,6 @@
-import React from "react"
-import PropTypes from "prop-types"
-import "../styles.scss"
+import React from "react";
+import PropTypes from "prop-types";
+import "../styles.scss";
 
 export const EmployerNone = (props) => {
 	const { text } = props

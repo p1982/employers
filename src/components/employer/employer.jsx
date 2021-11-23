@@ -1,8 +1,8 @@
-import React from "react"
-import { connect } from "react-redux"
-import { RadioInput } from "../input/Radio"
-import { onChangeAdd, onChangeRemove } from "../../store/employers/action"
-import "../styles.scss"
+import React from "react";
+import { connect } from "react-redux";
+import { RadioInput } from "../input/Radio";
+import { onChangeAdd, onChangeRemove } from "../../store/employers/action";
+import "../styles.scss";
 
 const mapDispatchToProps = (dispatch) => {
 	return {

@@ -4,28 +4,29 @@ import {
     GET_EMPLOYERS_SUCCESS,
     ADD_EMPLOYER,
     REMOVE_EMPLOYER,
-} from './types'
-import { store } from '../index'
+} from './types';
+import { store } from '../index';
+const BASE_URL = "https://yalantis-react-school-api.yalantis.com/api/task0/users";
 
 const getEmployersError = (error) => {
     return {
         type: GET_EMPLOYERS_ERROR,
         payload: error,
     }
-}
+};
 
 const getEmployersInit = () => {
     return {
         type: GET_EMPLOYERS_INIT
     }
-}
+};
 
 const getEmployersSuccess = (employers) => {
     return {
         type: GET_EMPLOYERS_SUCCESS,
         payload: employers,
     }
-}
+};
 
 const checkEmployers = (employers, storage) => {
     const updatedEmployers = employers.map((employer) => {
@@ -33,7 +34,7 @@ const checkEmployers = (employers, storage) => {
         return { ...employer, isActive: activeEmployers, }
     })
     return updatedEmployers
-}
+};
 
 export const onChangeAdd = (id) => {
     const state = store.getState()
@@ -46,7 +47,7 @@ export const onChangeAdd = (id) => {
         type: ADD_EMPLOYER,
         payload: employer
     }
-}
+};
 
 export const onChangeRemove = (id) => {
     const state = store.getState()
@@ -61,7 +62,7 @@ export const onChangeRemove = (id) => {
         type: REMOVE_EMPLOYER,
         payload: employer
     }
-}
+};
 
 export const getEmployers = () => async (dispatch) => {
     dispatch(getEmployersInit())
@@ -69,7 +70,7 @@ export const getEmployers = () => async (dispatch) => {
         localStorage.setItem('active', JSON.stringify([]))
     }
     try {
-        const response = await fetch('https://yalantis-react-school-api.yalantis.com/api/task0/users');
+        const response = await fetch(`${BASE_URL}`);
         const employers = await response.json();
         const localActive = JSON.parse(localStorage.getItem('active'))
         const updatedEmployers = checkEmployers(employers, localActive)
@@ -77,4 +78,4 @@ export const getEmployers = () => async (dispatch) => {
     } catch (error) {
         dispatch(getEmployersError(error))
     }
-}
+};
